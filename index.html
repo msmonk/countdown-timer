@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>任務倒數計時器</title>
+  <title>TimeSlicer分段任務倒數計時器</title>
   <style>
     body { background-color: #0f0f10; color: white; font-family: 'Segoe UI', sans-serif;
            display: flex; flex-direction: column; align-items: center; padding: 1em; }
@@ -17,7 +17,7 @@
     .segment-row input[type="number"] { width: 60px; }
     .segment-row input[type="color"] { width: 40px; height: 30px; }
     .buttons { margin-top: 1em; display: flex; gap: 1em; }
-    button { padding: 0.5em 1em; font-size: 1em; cursor: pointer; border-radius: 5px; border: none; }
+    button { padding: 0.4em 1em; font-size: 1em; cursor: pointer; border-radius: 5px; border: none; }
     .pause { background-color: #f0ad4e; }
     .restart { background-color: #5bc0de; }
     .continue { background-color: #5cb85c; }
@@ -32,7 +32,7 @@
   </style>
 </head>
 <body>
-  <h1>任務倒數計時器</h1>
+  <h1>TimeSlicer分段任務倒數計時器</h1>
   <div style="display: flex; gap: 2em; align-items: flex-start; margin-top: 1em;">
     <div>
       <label for="input-minutes">總分鐘：</label>
@@ -141,7 +141,7 @@
         const usedColors = [...document.querySelectorAll('.segColor')].map(input => input.value);
         color = predefinedColors.find(c => !usedColors.includes(c)) || '#66ccff';
       }
-      if (segmentRows.children.length >= 6) return alert("最多6項任務");
+      if (segmentRows.children.length >= 8) return alert("最多8項任務");
       const row = document.createElement('div');
       row.className = 'segment-row';
       row.setAttribute('draggable', true);
