@@ -1,0 +1,24 @@
+<h1>任務倒數計時器</h1>
+<div style="display: flex; gap: 2em; align-items: flex-start; margin-top: 1em;">
+  <div>
+    <label for="input-minutes">總分鐘：</label>
+    <input type="number" id="input-minutes" value="2" min="1" max="120">
+    <button onclick="addSegmentRow()">新增任務</button>
+    <button onclick="setCustomTime()">開始</button>
+    <div id="segment-rows" style="min-width: 320px; display: flex; flex-direction: column; gap: 0.5em;" ondragover="event.preventDefault()" ondrop="onDrop(event)"></div>
+    <div id="error-message" style="color: #ff6666; font-weight: bold; margin-top: 0.5em;"></div>
+  </div>
+  <div>
+    <div class="timer-container">
+      <div class="timer-circle"></div>
+      <div class="overlay" id="circle-overlay"></div>
+      <div class="time" id="time-display">00:02:00</div>
+    </div>
+    <div class="buttons">
+      <button class="pause" onclick="pauseTimer()">暫停</button>
+      <button class="continue" onclick="continueTimer()">繼續</button>
+      <button class="restart" onclick="restartTimer()">重新開始</button>
+      <button class="stop" onclick="stopTimer()">停止</button>
+    </div>
+  </div>
+</div>
